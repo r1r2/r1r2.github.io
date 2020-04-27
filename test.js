@@ -1,3 +1,4 @@
+
 "use strict";
 
 function percentage() {
@@ -12,3 +13,4 @@ function percentage() {
 }
 
 document.getElementById('calculate').addEventListener('click', percentage);
+
