@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Here</title>
+</head>
+<body>
+    <input type="text" id="userId" placeholder="Enter User Id">
+    <input type="password" id="userPassword" placeholder="Enter Login Password">
+    <button onclick="authenticateUser()">Login Here</button>
+    <p id="message"></p>
+</body>
+</html>
+
+
+<script>
+    //     >,<,>=,<=,==, !=
+    // Logical Op:   &&, ||, !
+
+   function authenticateUser(){
+       var userId=document.getElementById("userId").value;
+       var userPassword=document.getElementById("userPassword").value;
+
+       if(userId=="asdf" && userPassword=="1234"){
+           document.write("Login Successful");
+           window.location.href="file:///C:/Users/Reek/Desktop/neosphere/coronatest.html";
+       }else{
+            document.getElementById("message").innerHTML="Login Failure";
+       }
+   }    
+
+</script>
