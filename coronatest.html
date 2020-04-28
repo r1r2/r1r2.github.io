@@ -20,95 +20,123 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
 
-    <style>
-div1 {
-  box-sizing: border-box;
-   border-style: solid;
-  border-width: 2px;
- border-color: yellow;
- /*margin: 2px;*/
-}
+  <style>
+    div1 {
+      box-sizing: border-box;
+      border-style: solid;
+      border-width: 2px;
+      border-color: black;
+      /*margin: 2px;*/
+    }
 
-div2 {
-  box-sizing: border-box;
-   border-style: solid;
-  border-width: 1px;
- border-color: black;
- margin-top: 2px; 
-}
+    div2 {
+      box-sizing: border-box;
+      border-style: solid;
+      border-width: 1px;
+      border-color: black;
+      margin-top: 12px;
+    }
 
-/* Create two equal columns that floats next to each other */
-.column1 {
-  float: left;
-  width: 60%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
+    /* Create two equal columns that floats next to each other */
+    .column1 {
+      float: left;
+      width: 60%;
+      padding: 10px;
+      height: 300px;
+      /* Should be removed. Only for demonstration */
+    }
 
-.column2 {
-  float: left;
-  width: 40%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-  border-style: solid;
-  border-width: 15px;
-  border-width: 10px;
-  border-color: yellow;
-}
-
-</style>
+    .column2 {
+      float: left;
+      width: 40%;
+      padding: 10px;
+      height: 300px;
+      /* Should be removed. Only for demonstration */
+      border-style: solid;
+      border-width: 15px;
+      border-width: 10px;
+      border-color: yellow;
+    }
+  </style>
 </head>
 
 <body>
-<div class="container-fluid">
+  <div class="container-fluid">
     <div1 class="row">
-    	<div1 class="col-md-12" style="border: 10px solid purple; background-color: rgb(0, 143, 31);">
-        <h5 class="display-4" style=" text-align: center;"><strong>TOTAL CASES CLOSED TILL DATE</strong></h5>
+      <div1 class="col-md-12" style="border: 10px solid green; background-color: rgb(106, 188, 243);">
+        <h5 class="display-4" style=" text-align: center;"><strong>CORONA VIRUS UPDATES</strong></h5>
         <h6 id="demo" style="text-align: center;"></h6>
         <script>
-var d = new Date();
-document.getElementById("demo").innerHTML = d;
-</script>  
+          var d = new Date();
+          document.getElementById("demo").innerHTML = d;
+        </script>
       </div1>
     </div1>
 
-     <div class="row">
-      <div2 class="col-md-8" style="background-color:grey;">
+    <div class="row margin-top: 5px;">
+      <div2 class="col-md-8">
         <div class="form-group">
-          TOTAL CLOSED CASES<input class="form-control" id="total" placeholder="Enter Total number of CASES Confirmed">
 
-          TOTAL DEATHS<input class="form-control" id="dead" placeholder="Enter Total number of DEATH confirmed">
+          <b>TOTAL DEATHS</b><input class="form-control" id="dead" placeholder="Enter Total number of DEATH confirmed">
 
-          TOTAL RECOVERED<input class="form-control" id="recover"
+          <b>TOTAL RECOVERED</b><input class="form-control" id="recover"
             placeholder="Enter Total number of RECOVERED Confirmed">
-          <button id="calculate" style="padding: 2px; margin-top: 5px; border: 5px outset brown; background-color: blue; color: white;">CALCULATE</button>
+
+          <b>NORMAL CASES</b><input class="form-control" id="normal" placeholder="Enter Total number of NORMAL Cases">
+
+          <b>SERIOUS CASES</b><input class="form-control" id="serious"
+            placeholder="Enter Total number of SERIOUS Cases">
+
+          <hr>
+          <button type="button" class="btn btn-info" id="calculate" style="padding: 2px; border: 5px;">
+            <h6>CALCULATE</h6>
+          </button>
         </div>
-	    </div2>
-	    
-        <div2 class="col-md-4" style="background-color:grey;">
-          	<h6>RESULT IN PERCENTAGE (%)</h6>
-            <h6>DEATH(%)</h6>
-            <h6 input id="resultdead"></h6>
-            <h6>RECOVERED(%)</h6>
-            <h6 input id="resultrecover"></h6>
-            <script src="test.js"></script>
-            
+      </div2>
 
-            <p id="demo1" style="color:red"></p>
+      <div2 class="col-md-4" style="background-color:white; ">
+        <h6>RESULT IN PERCENTAGE (%)</h6>
+        <h6>DEATH(%)</h6>
+        <span class="badge" style="padding: 0px;">
+        <h6 input id="resultdead" style="background-color: black; color: white;">00</h6>
+        </span>
+        
+        <h6>RECOVERED(%)</h6>
+        <span class="badge" style="padding: 0px;">
+        <h6 input id="resultrecover" style="background-color: lightgreen; color: white;">00</h6>
+        </span>
+        
+        <h6>NORMAL(%)</h6>
+        <span class="badge" style="padding: 0px;">
+          <h6 input id="resultnormal" style="background-color: blue; color: white;">00
+          </h6>
+        </span>
 
-<script>
-try {
-  alert("Welcome  to this page!");
-}
-catch(err) {
-  document.getElementById("demo").innerHTML = 
-  err.name + "<br>" + err.message;
-}
-</script>
-           
-        </div2>
-      </div>
-</div>
+        <h6>SERIOUS(%)</h6>
+        <span class="badge badge-danger">
+            <h6 input id="resultserious" style="color: white;">00
+            </h6>
+          </span>
+
+        <script src="test.js"></script>
+
+
+        <p id="demo1" style="color:red"></p>
+
+        <script>
+          try {
+            alert("Welcome  to this page!");
+          }
+          catch (err) {
+            document.getElementById("demo").innerHTML =
+              err.name + "<br>" + err.message;
+          }
+        </script>
+
+      </div2>
+    </div>
+  </div>
 
 </body>
+
 </html>
